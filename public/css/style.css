@@ -1,0 +1,852 @@
+body,
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+
+header {
+    border-bottom: solid 1.5px #dbdbdb;
+    height: 70px;
+    gap: 10px;
+}
+
+.header_logo_div {
+    width: 80%;
+    margin: auto;
+}
+
+.header_logo {
+    width: 10%;
+    padding: 22px 0 0 5px;
+}
+
+/* Main Container */
+
+.main {
+    margin: auto;
+    padding: 70px 0 70px 0;
+    width: 80%;
+    min-height: 250px;
+}
+
+.about_property {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.search_n_details {
+    border: solid 1px #dbdbdb;
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.detail_title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.details_forall {
+    position: relative;
+    transition: background-color 0.5s ease;
+    padding: 3px 15px;
+    cursor: pointer;
+}
+
+.details_forall:hover,
+.details_forall:active {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+}
+
+input[id^='check_region'] {
+    accent-color: #28a745;
+}
+
+.dropdown_content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    background-color: #fff;
+    z-index: 1;
+    padding-top: 20px;
+}
+
+/* Hover state */
+.details_forall:hover .dropdown_content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.select_regions {
+    width: 33%;
+}
+
+.check_regions,
+.check_price,
+.check_area,
+.check_bedrooms {
+    width: 700px;
+    height: fit-content;
+    background-color: #fff;
+    border: solid 1px #dbdbdb;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 25px;
+}
+
+.check_price,
+.check_area,
+.check_bedrooms {
+    width: 350px;
+}
+
+.price-input-wrapper,
+.area-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.bedroom_quantity {
+    width: 42px;
+    height: 42px;
+    border: solid 1px #dbdbdb;
+    border-radius: 8px;
+    text-align: center;
+    align-content: center;
+    margin: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.bedroom_quantity:hover {
+    background-color: #f3f3f3;
+}
+
+.bedroom_quantity.active {
+    background-color: #dbdbdb;
+}
+
+#from,
+#upto {
+    padding-right: 2.5rem;
+    font-size: 1rem;
+}
+
+.price-input-wrapper::after,
+.area-input-wrapper:after {
+    content: '₾';
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+}
+
+.area-input-wrapper:after {
+    content: 'მ²';
+}
+
+div[class^='price_min_'],
+div[class^='price_max_'],
+div[class^='area_min_'],
+div[class^='area_max_'] {
+    padding: 5px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+div[class^='price_min_']:hover,
+div[class^='price_max_']:hover,
+div[class^='area_min_']:hover,
+div[class^='area_max_']:hover {
+    background-color: #f3f3f3;
+}
+
+.listing_agents {
+    width: 100%;
+    height: 40px;
+}
+
+.arrow_up_down .fa-angle-down,
+.arrow_up_down .fa-angle-up {
+    font-size: 13px;
+}
+
+.listing_agents {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+.add_listings,
+.add_agents {
+    border: solid 2px #F93B1D;
+    border-radius: 10px;
+    width: fit-content;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    padding: 5px 12px 5px 12px;
+    color: #F93B1D;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    text-decoration: none !important;
+}
+
+.add_listings {
+    background-color: #F93B1D;
+    color: #fff !important;
+}
+
+.add_listings:hover {
+    background-color: #DF3014;
+    border: solid 2px #DF3014;
+}
+
+.add_agents:hover {
+    background-color: #F93B1D;
+    color: #fff;
+}
+
+.choosen_details {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    gap: 10px;
+    font-size: 13px;
+    flex-wrap: wrap;
+}
+
+.choosen_details .clear {
+    cursor: pointer;
+}
+
+.chsn_dtls {
+    border: solid 1px #dbdbdb;
+    border-radius: 10px;
+    min-width: fit-content;
+    padding: 4px 10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.chsn_dtls .fa-x {
+    font-size: 10px;
+    padding-top: 4px;
+    margin-left: 5px;
+    color: #354451;
+}
+
+.clear {
+    font-weight: bold;
+}
+
+.properties {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    gap: 20px;
+}
+
+.property_information {
+    width: 24%;
+    height: fit-content;
+    border: solid 1px #dbdbdb;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    position: relative;
+    text-decoration: none !important;
+    color: #02152680;
+}
+
+.property_information:hover {
+    text-decoration: none !important;
+    color: #02152680;
+}
+
+.rent_buy {
+    position: absolute;
+    border: solid 1px #02152680;
+    border-radius: 25px;
+    color: #fff;
+    background-color: #02152680;
+    top: 5%;
+    left: 5%;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.property_information img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: auto;
+    max-width: 365px;
+    height: 294px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.property_price {
+    font-weight: bold;
+    font-size: 24px;
+    padding: 25px;
+}
+
+.property_address {
+    padding: 15px 25px;
+    color: #02152680;
+}
+
+.property_description {
+    display: flex;
+    padding: 0 0 25px 15px;
+    height: fit-content;
+    line-height: 15px;
+}
+
+.property_description div img {
+    width: 15px;
+}
+
+.property_address .fa-location-dot,
+.property_bedrooms,
+.property_area,
+.property_vector {
+    color: #02152680;
+    font-size: 14px;
+    height: 15px;
+}
+
+.property_bedrooms,
+.property_area,
+.property_vector {
+    margin-left: 10px;
+}
+
+.property_description span {
+    color: #02152680;
+    font-size: 13px;
+    margin-left: 3px;
+}
+
+.col label,
+.col span,
+.col i {
+    font-size: 13px;
+    color: #021526;
+}
+
+input,
+select,
+textarea {
+    border-color: #021526 !important;
+    border-radius: 10px;
+}
+
+#addListings textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#addListings label {
+    font-size: 14px;
+    color: #021526 !important;
+}
+
+/* Image upload */
+
+.image-upload-wrapper {
+    border: 2px dashed #021526;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-upload-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    display: none;
+}
+
+.image-upload-wrapper:hover {
+    border-color: #888;
+}
+
+.image-upload-wrapper input[type="file"] {
+    display: none;
+}
+
+.placeholder-text {
+    color: #888;
+}
+
+/* Property Slider */
+
+.title {
+    padding: 25px 0px 25px 0px;
+}
+
+.property_slider {
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+}
+
+.wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.wrapper .fa-arrow-left,
+.wrapper .fa-arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.wrapper .fa-arrow-left:first-child,
+.wrapper .fa-arrow-right:first-child {
+    left: -50px;
+}
+
+.wrapper .fa-arrow-left:last-child,
+.wrapper .fa-arrow-right:last-child {
+    right: -50px;
+}
+
+.wrapper .fa-arrow-left:active,
+.wrapper .fa-arrow-right:active {
+    transform: translateY(-50%) scale(0.85);
+}
+
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 4) - 12px);
+    gap: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.wrapper .carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.wrapper .carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper .carousel.dragging {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+.wrapper .carousel .card {
+    scroll-snap-align: start;
+    height: fit-content;
+    border: solid 1px #dbdbdb;
+    background: #fff;
+    border-radius: 8px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: -1000;
+}
+
+.wrapper .carousel.dragging .card {
+    user-select: none;
+    cursor: grab;
+}
+
+.wrapper .carousel .card img {
+    width: 100%;
+    object-fit: cover;
+    border: 4px solid #fff;
+}
+
+.wrapper .carousel .card h2 {
+    font-size: 1.52rem;
+    font-weight: 500;
+    margin: 30px 0 5px;
+}
+
+.wrapper .carousel .card span {
+    color: #6a6d78;
+    font-size: 1.31rem;
+}
+
+.slider_property_price,
+.slider_property_address {
+    font-size: 20px;
+    color: #02152680;
+    padding: 15px 0 15px 0;
+}
+
+.slider_property_price {
+    font-weight: bold;
+}
+
+.slider_property_description {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    line-height: 25px;
+}
+
+.slider_property_description div i,
+.slider_property_description div span {
+    color: #02152680;
+    padding: 2px;
+}
+
+.slider_all_text {
+    width: 85%;
+    padding: 10px;
+}
+
+@media (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+    }
+}
+
+/* Real estates page */
+
+.arrow-left-a {
+    text-decoration: none;
+    color: #02152680;
+}
+
+.real_estate_div {
+    display: flex;
+}
+
+.real_estate_left,
+.real_estate_right {
+    width: 50%;
+}
+
+.upload_date {
+    float: right;
+    color: #02152680;
+}
+
+.real_estate_right {
+    padding: 0 35px 35px 35px;
+}
+
+.real_estate_left img {
+    width: 100%;
+}
+
+.real_estate_price {
+    font-weight: bold;
+    font-size: 50px;
+    padding: 0 25px 10px 25px;
+}
+
+.real_estate_address {
+    padding: 10px 25px;
+    font-size: 20px;
+    color: #02152680;
+}
+
+.real_estate_description {
+    color: #02152680;
+    padding: 0 0 0px 15px;
+}
+
+.real_estate_address .fa-location-dot,
+.real_estate_bedrooms .fa-bed,
+.real_estate_area .fa-expand,
+.real_estate_vector .fa-sign-hanging {
+    color: #02152680;
+    font-size: 20px;
+    height: 15px;
+}
+
+.real_estate_bedrooms,
+.real_estate_area,
+.real_estate_vector {
+    margin-left: 10px;
+}
+
+.real_estate_description .real_estate_bedrooms,
+.real_estate_description .real_estate_area,
+.real_estate_description .real_estate_vector {
+    padding: 15px 0 15px 0;
+    font-size: 20px;
+    height: fit-content;
+}
+
+.real_estate_descr {
+    padding: 0 25px 25px 25px;
+    font-size: 14px;
+    width: 70%;
+    color: #02152680;
+}
+
+.real_estate_delete_btn {
+    background-color: #fff;
+    color: #808A93;
+    border: solid 1px #808A93;
+    border-radius: 10px;
+    padding: 7px;
+    margin: 18px;
+    transition: all 0.5s ease-in-out
+}
+
+.real_estate_delete_btn:hover {
+    color: #fff;
+    background-color: #808A93;
+}
+
+.agent_container {
+    width: 60%;
+    border: 1px solid #dbdbdb;
+    padding: 20px 20px 0 20px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.agent_name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.agent_details {
+    font-size: 14px;
+}
+
+.agent_details a {
+    text-decoration: none;
+    color: #02152680;
+}
+
+.agent_img_name {
+    display: flex;
+}
+
+.agent_img_div {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agent_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.agent_name_div {
+    padding-left: 20px;
+}
+
+.custom-color {
+    color: #808A93;
+}
+
+/* add_listings page */
+
+.listings_container {
+    width: 45%;
+    margin: auto;
+}
+
+.listing_title {
+    color: #021526;
+    font-weight: bold;
+}
+
+#radio1,
+#radio2 {
+    display: none;
+}
+
+.listing_label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.listing_label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #021526;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+#radio1:checked+.listing_label::after,
+#radio2:checked+.listing_label::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    background-color: #021526;
+    border-radius: 50%;
+}
+
+.radioError {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    display: none;
+}
+
+
+#addressFeedback,
+#zipcodeFeedback,
+#priceFeedback,
+#areaFeedback,
+#bedroomsFeedback,
+#agentFeedback {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#describeFeedback {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* A little resp for my screen :D */
+
+@media only screen and (max-width: 1750px) {
+    .properties {
+        gap: 15px;
+    }
+
+    .about_property .details {
+        width: 110%;
+    }
+
+    .slider_property_address {
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .slider_all_text {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .search_n_details {
+        width: 150% !important;
+    }
+
+    .real_estate_price {
+        font-size: 35px;
+    }
+
+    .real_estate_address {
+        font-size: 16px;
+    }
+
+    .real_estate_description .real_estate_bedrooms,
+    .real_estate_description .real_estate_area,
+    .real_estate_description .real_estate_vector,
+    .real_estate_address .fa-location-dot,
+    .real_estate_bedrooms .fa-bed,
+    .real_estate_area .fa-expand,
+    .real_estate_vector .fa-sign-hanging {
+        font-size: 16px;
+        padding: 5px 0 5px 0;
+    }
+
+    .real_estate_descr {
+        width: 90%;
+        padding: 0 10px 10px 25px;
+    }
+
+    .title {
+        font-size: 25px;
+    }
+
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.preloader div {
+    border: solid;
+    font-size: 50px;
+}
+
+.properties {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.properties.visible {
+    opacity: 1;
+}
